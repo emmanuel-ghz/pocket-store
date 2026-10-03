@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="description" content="PocketStore: catálogo de productos con soporte offline.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>PocketStore</title>
+</head>
+<body>
+  <!-- App Shell: barra superior -->
+  <header class="topbar">
+    <h1 class="topbar__title">PocketStore</h1>
+    <span id="net-status" class="badge" role="status" aria-live="polite">Conectando…</span>
+  </header>
+
+  <!-- App Shell: contenedor principal (contenido dinámico) -->
+  <main class="container">
+    <div class="toolbar">
+      <input id="search" class="search" type="search" placeholder="Buscar producto…" aria-label="Buscar producto">
+      <p id="source-info" class="source-info"></p>
+    </div>
+
+    <p id="message" class="message" hidden></p>
+    <section id="catalog" class="grid" aria-label="Catálogo de productos">
+      <!-- Esqueletos de carga: se muestran al instante junto con el shell -->
+      <article class="card card--skeleton"></article>
+      <article class="card card--skeleton"></article>
+      <article class="card card--skeleton"></article>
+      <article class="card card--skeleton"></article>
+    </section>
+  </main>
+
+  <!-- App Shell: pie de página -->
+  <footer class="footer">
+    <p>PocketStore &middot; Catálogo offline con Vanilla JS &middot; Datos: JSONPlaceholder</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
